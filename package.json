@@ -1,0 +1,23 @@
+{
+  "name": "detect-tagless-ec2",
+  "version": "1.0.0",
+  "description": "Detect AWS EC2 instances without specific tag and notify it by AWS SNS.",
+  "main": "detect-tagless-ec2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "translucens",
+  "license": "MIT",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+     "env": {
+        "node": true
+    },
+    "extends": "eslint:recommended"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.54.0"
+  }
+}
