@@ -16,7 +16,7 @@ exports.handler = (event, context, callback) => {
         data.Reservations.forEach(reservation => {
             reservation.Instances.forEach(instance => {
                 if (!instance.Tags.some(tagkv => {
-                    return (tagkv.Key === process.env.TAG_TITLE && tagkv.Value)
+                    return (tagkv.Key === process.env.TAG_TITLE && tagkv.Value);
                 })) {
                     reporting_instances.push(instance);
                 }
@@ -35,7 +35,7 @@ exports.handler = (event, context, callback) => {
         report_contents.Message = process.env.MESSAGE_HEADER;
         report_contents.Message += '\n\n';
         reporting_instances.forEach(instance => {
-            let nameTag = instance.Tags.find(tagkv => { return tagkv.Key === 'Name' });
+            let nameTag = instance.Tags.find(tagkv => { return tagkv.Key === 'Name'; });
             report_contents.Message += nameTag ? nameTag.Value : '(Unnamed)';
             report_contents.Message += '\t' + instance.InstanceId +
                 '\t(' + instance.InstanceType + ': ' + instance.State.Name + ')\n';
